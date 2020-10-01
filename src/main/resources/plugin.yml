@@ -1,0 +1,4 @@
+name: TechReqs
+main: xyz.razorrider7.techreqs.TechReqs
+version: 1.0.0
+depend: [TechTree, PlaceholderAPI]
