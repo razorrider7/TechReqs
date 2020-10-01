@@ -5,14 +5,12 @@ import eu.asangarin.tt.api.FormatManager;
 import eu.asangarin.tt.api.TechRequirement;
 import eu.asangarin.tt.data.TechEntry;
 import org.apache.commons.lang.WordUtils;
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import java.util.logging.Level;
 
 public class ItemRequirement implements TechRequirement {
     private Material material;
