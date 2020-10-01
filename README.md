@@ -1,5 +1,5 @@
 # TechReqs
-Additional requirements for the premium TechTrees plugin https://www.spigotmc.org/resources/techtree.82209/
+Provides additional requirements for the premium TechTrees plugin found [here](https://www.spigotmc.org/resources/techtree.82209/)
 
 ## Usage
 #### papis (PlaceholderAPI String)
