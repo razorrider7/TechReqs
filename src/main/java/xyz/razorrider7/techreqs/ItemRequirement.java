@@ -6,9 +6,11 @@ import eu.asangarin.tt.api.TechRequirement;
 import eu.asangarin.tt.data.TechEntry;
 import org.apache.commons.lang.WordUtils;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.logging.Level;
 
@@ -17,7 +19,6 @@ public class ItemRequirement implements TechRequirement {
     private int amount;
     private boolean take;
     private ItemStack is;
-    private String name = null;
 
     @Override
     public boolean met(TechEntry e, Player p) {
@@ -30,8 +31,7 @@ public class ItemRequirement implements TechRequirement {
     public String display(TechEntry e, Player p, boolean isUnlocked) {
         // Uses the format manager to properly display this requirement.
         // The string returned is the String that will replace the placeholder in the lore.
-        Bukkit.getLogger().log(Level.INFO, "Display name: " + is.getItemMeta().getDisplayName());
-        if (is.getItemMeta().getDisplayName().matches("")) {
+        if (is.getItemMeta().getDisplayName().equals("")) {
             String display = WordUtils.capitalizeFully(material.name().replace('_', ' '));
 
             return FormatManager.get().getFormat("item").getFormat(isUnlocked).replace("{display}", display).replace("{amount}", Integer.toString(amount));
@@ -69,8 +69,9 @@ public class ItemRequirement implements TechRequirement {
         material = Material.getMaterial(c.getString("material", "STONE"));
         is = new ItemStack(material, c.getInt("amount", 1));
         if (c.getString("name", null) != null) {
-            name = c.getString("name");
-            is.getItemMeta().setDisplayName(name);
+            ItemMeta meta = is.getItemMeta();
+            meta.setDisplayName(ChatColor.translateAlternateColorCodes('&', c.getString("name")));
+            is.setItemMeta(meta);
         }
         take = c.getBoolean("take", true);
         return true;
