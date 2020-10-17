@@ -2,8 +2,8 @@
 Provides additional requirements for the premium TechTrees plugin found [here](https://www.spigotmc.org/resources/techtree.82209/)
 
 ## Usage
-#### papis (PlaceholderAPI String)
-Use `papis` to see if a placeholder's string matches with case/without case
+#### papistring (PlaceholderAPI String)
+Use `papistring` to see if a placeholder's string matches with case/without case
 
 | Line Config Arg. | Description |
 | ------------- | ------------- |
@@ -15,11 +15,11 @@ Use `papis` to see if a placeholder's string matches with case/without case
 
 example: 
 
-`- 'papis{placeholder="%vault_rank%",operator="equals",match="VIP",case="false",Display="VIP Rank"}'`
+`- 'papistring{placeholder="%vault_rank%",operator="equals",match="VIP",case="false",Display="VIP Rank"}'`
 
 
-### papim (PlaceholderAPI Math)
-Use `papim` to see if a placeholder is mathematically == != > >= < <= a number
+### papimath (PlaceholderAPI Math)
+Use `papimath` to see if a placeholder is mathematically == != > >= < <= a number
 
 | Line Config Arg. | Description |
 | ------------- | ------------- |
@@ -30,7 +30,7 @@ Use `papim` to see if a placeholder is mathematically == != > >= < <= a number
 
 example: 
 
-`- 'papim{placeholder="%vault_eco_balance%",operator=">=",match=100,Display="$100"}'`
+`- 'papimath{placeholder="%vault_eco_balance%",operator=">=",match=100,Display="$100"}'`
 
 ### item (Vanilla Item)
 Use `item` to see if a player has the specified amount of vanilla items (currently only works with normal items and custom item names)
